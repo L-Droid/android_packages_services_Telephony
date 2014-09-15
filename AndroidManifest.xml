@@ -745,20 +745,45 @@
             </intent-filter>
         </activity>
 
-        <!-- TeloRadio Service -->
-        <service android:name=".TeloRadioService"
-        android:persistent="true"
-        android:process="com.android.phone"
-                android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+    <activity android:name="CallBarring" android:label="@string/call_barring"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:theme="@style/SettingsLight">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+        </intent-filter>
+    </activity>
+
+
+        <activity android:name="EmergencyCallList"
+                android:label="@string/emergency_call_list_title">
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.android.internal.telephony.REQUEST_NETWORK_MODE" />
-                <action android:name="com.android.internal.telephony.MODIFY_NETWORK_MODE" />
-                <action android:name="com.android.phone.TeloRadioService" />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </service>
+        </activity>
+
+        <activity
+            android:name="CdmaCallForwardOptions"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/labelCF" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="UserPLMNListPreference"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="UPLMNEditor"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
     </application>
 
